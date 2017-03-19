@@ -15,6 +15,11 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MiaAISetup_x64", "MiaAISetu
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MiaAISetup_x86", "MiaAISetup_x86\MiaAISetup_x86.vdproj", "{4766D9A4-EBC6-4941-8676-41A7E021C1C8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2026B79-3384-41A7-A9AA-94C6A4725875}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,29 +100,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://trungnguyen1909.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Data\\Data.csproj
-		SccProjectName1 = Data
-		SccLocalPath1 = Data
-		SccProjectUniqueName2 = MiaAI\\MiaAI.csproj
-		SccProjectName2 = MiaAI
-		SccLocalPath2 = MiaAI
-		SccProjectUniqueName3 = MiaAISetup_x64\\MiaAISetup.vdproj
-		SccProjectName3 = MiaAISetup_x64
-		SccLocalPath3 = MiaAISetup_x64
-		SccProjectUniqueName4 = MiaAISetup_x86\\MiaAISetup_x86.vdproj
-		SccProjectName4 = MiaAISetup_x86
-		SccLocalPath4 = MiaAISetup_x86
-		SccProjectUniqueName5 = SmartHome\\SmartHome.csproj
-		SccProjectName5 = SmartHome
-		SccLocalPath5 = SmartHome
-		SccProjectUniqueName6 = Store\\Store.csproj
-		SccProjectName6 = Store
-		SccLocalPath6 = Store
 	EndGlobalSection
 EndGlobal
