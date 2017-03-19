@@ -260,10 +260,10 @@ namespace MiaAI
 
                             if (time.Contains("/"))
                             {
-                                if (!time.Contains("T"))
+                                /*if (!time.Contains("T"))
                                     time = time.Substring(time.IndexOf('/') + 1);
-                                else
-                                    time = time.Remove(time.IndexOf('/'));
+                                else */
+                                time = time.Remove(time.IndexOf('/'));
                                 time = time.Trim('/');
                             }
                             if (time.Contains("T"))
@@ -279,6 +279,7 @@ namespace MiaAI
                                 else
                                     DateTime.TryParseExact(time, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out converted);
                             }
+                            if (converted < DateTime.Now) converted= converted.AddDays(1);
                             summary = summary.Trim();
                             item.reminder = summary;
                             item.datetime = converted;
@@ -289,6 +290,7 @@ namespace MiaAI
                                 {
                                     StartSpeak_Click(this, new RoutedEventArgs());
                                 }));
+                            IsDone = false;
                             return;
                         case "reminder.confirm":
                             if (item != new Reminder())
@@ -302,6 +304,7 @@ namespace MiaAI
                             {
                                 HistoryWrite("I'm not sure what you said.", speech);
                             }
+                            IsDone = true;
                             break;
                         case "location.current":
                             string loc = Location.GetCurrentAddress();
