@@ -21,7 +21,7 @@
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Resources>
-        <Button x:Name="StartSpeak" Content="Start Speak" HorizontalAlignment="Left" Margin="35,273,0,0" VerticalAlignment="Top" Width="75" Click="StartSpeak_Click"/>
+
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="36" Margin="149,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="16" VerticalContentAlignment="Center">
             <TextBox.Style>
                 <Style TargetType="{x:Type TextBox}">
@@ -37,6 +37,9 @@
         </TextBox>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="258" Margin="149,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" IsReadOnly="True" FontSize="20"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="29,89,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.001,0.287"/>
+        <Button x:Name="StartSpeak" HorizontalAlignment="Left" Margin="55,275,0,0" VerticalAlignment="Top" Width="31">
+            <Image Source="Assets\microphone.jpg"></Image>
+        </Button>
 
     </Grid>
 
