@@ -3,24 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MiaAI"
         mc:Ignorable="d"
         Title="Personal Assistant" Height="350" Width="525" ResizeMode="NoResize">
-
-    <Grid FocusManager.FocusedElement="{Binding ElementName=textBox}">
-        <Grid.Resources>
-            <VisualBrush x:Key="Hint" Stretch="None" AlignmentX="Left" AlignmentY="Top" >
-                <VisualBrush.Transform>
-                    <TranslateTransform X="0" Y="11" />
-                </VisualBrush.Transform>
-                <VisualBrush.Visual>
-                    <Grid HorizontalAlignment="Left">
-                        <TextBlock FontFamily="SEGOEWP"  FontSize="16"   FontWeight="Normal"
+    <Window.Resources>
+        <VisualBrush x:Key="Hint" Stretch="None" AlignmentX="Left" AlignmentY="Top" >
+            <VisualBrush.Transform>
+                <TranslateTransform X="0" Y="11" />
+            </VisualBrush.Transform>
+            <VisualBrush.Visual>
+                <Grid HorizontalAlignment="Left">
+                    <TextBlock FontFamily="SEGOEWP"  FontSize="16"   FontWeight="Normal"
                            HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Gray" FontStyle="Italic" Opacity="1" Text="Ask me anything"/>
-                    </Grid>
-                </VisualBrush.Visual>
-            </VisualBrush>
-        </Grid.Resources>
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+        <VisualBrush x:Key="Hint2" Stretch="None" AlignmentX="Left" AlignmentY="Top" >
+            <VisualBrush.Transform>
+                <TranslateTransform X="0" Y="11" />
+            </VisualBrush.Transform>
+            <VisualBrush.Visual>
+                <Grid HorizontalAlignment="Left">
+                    <TextBlock FontFamily="SEGOEWP"  FontSize="16"   FontWeight="Normal"
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Gray" FontStyle="Italic" Opacity="1" Text="Listening..."/>
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Window.Resources>
+    <Grid FocusManager.FocusedElement="{Binding ElementName=textBox}">
+        
 
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="36" Margin="149,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="16" VerticalContentAlignment="Center">
             <TextBox.Style>
@@ -32,13 +42,15 @@
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
+                
             </TextBox.Style>
 
         </TextBox>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="258" Margin="149,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" IsReadOnly="True" FontSize="20"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="29,89,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.001,0.287"/>
-        <Button x:Name="StartSpeak" HorizontalAlignment="Left" Margin="55,275,0,0" VerticalAlignment="Top" Width="31">
-            <Image Source="Assets\microphone.jpg"></Image>
+        <Button x:Name="StartSpeak" HorizontalAlignment="Left" Margin="55,275,0,0" VerticalAlignment="Top" Width="31" Click="StartSpeak_Click">
+            <Image x:Name="StartSpeakImage" Source="Assets\microMute.jpg"/>
+            
         </Button>
 
     </Grid>

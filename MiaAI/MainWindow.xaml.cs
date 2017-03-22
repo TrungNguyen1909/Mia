@@ -306,6 +306,10 @@ namespace MiaAI
                             }
                             IsDone = true;
                             break;
+                        case "reminder.cancel":
+                            item = new Reminder();
+                            HistoryWrite(Received.Result.Fulfillment.Speech, speech);
+                            break;
                         case "location.current":
                             string loc = Location.GetCurrentAddress();
                             if (loc != null)
@@ -372,6 +376,7 @@ namespace MiaAI
                             break;
                     }
                 }
+                StartSpeakImage.Source = new BitmapImage(new Uri(@"Assets\microMute.jpg",UriKind.Relative));
                 StartCommandWaiting.Invoke(this, new EventArgs());
                 IsDone = true;
             }
@@ -405,6 +410,7 @@ namespace MiaAI
         {
             Dispatcher.Invoke((Action)(() =>
             {
+                textBox.Background = Brushes.Transparent;
                 this.textBox.Text = e.PartialResult;
             }));
         }
@@ -413,7 +419,7 @@ namespace MiaAI
         {
             Dispatcher.Invoke((Action)(() =>
             {
-
+                textBox.Clear();
                 this.textBox1.Text +=("An error Occured"+"\n"); this.textBox1.ScrollToEnd();
                 this.textBox1.Text += ("Error data:" + e.SpeechErrorText + "\n");
                 this.StartCommandWaiting.Invoke(this, new EventArgs());
@@ -451,6 +457,8 @@ namespace MiaAI
             this.StopCommandWaiting.Invoke(this, new EventArgs());
             this.StartSpeak.IsEnabled = false;
             this.CreateMicrophoneRecoClient();
+            textBox.Background =(VisualBrush) this.Resources["Hint2"];
+            StartSpeakImage.Source = new BitmapImage(new Uri( @"Assets\microSpeak.jpg",UriKind.Relative));
             try
             {
                 this.micClient.StartMicAndRecognition();
