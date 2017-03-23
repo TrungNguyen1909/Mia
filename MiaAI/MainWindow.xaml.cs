@@ -23,6 +23,7 @@ using System.Media;
 using SmartHome;
 using Store;
 using System.Threading;
+using System.ComponentModel;
 
 namespace MiaAI
 {
@@ -53,6 +54,7 @@ namespace MiaAI
             App.StartListeningRequest += StartListeningRequest;
             this.Closing += MainWindow_Closing;
         }
+
         private void Initialize()
         {
             reader.SetOutputToDefaultAudioDevice();
@@ -84,18 +86,24 @@ namespace MiaAI
             micClient.OnPartialResponseReceived += MicClient_OnPartialResponseReceived;
 
         }
-        private void HistoryWrite(string s, bool speech = false, bool write = true)
+        private async Task HistoryWrite(string s, bool speech = false, bool write = true)
         {
-            if (write)
+            Dispatcher.Invoke(() =>
             {
-                textBox1.AppendText(s + "\n"); this.textBox1.ScrollToEnd();
-            }
+                textBox.Background = (VisualBrush)this.Resources["Hint"];
+                if (write)
+                {
+                    textBox1.AppendText(s + "\n"); this.textBox1.ScrollToEnd();
+                }
+            });
             if (speech)
             {
-                reader.Speak(s);
+                await Task.Run(() =>reader.Speak(s));
+                
             }
         }
-        private void NLP(string sentence, bool speech = false)
+        
+        private async void NLP(string sentence, bool speech = false)
         {
             if (sentence != null)
             {
@@ -106,7 +114,7 @@ namespace MiaAI
                 var Received = lus.TextRequest(sentence);
                 if (Received.Result.ActionIncomplete)
                 {
-                    HistoryWrite(Received.Result.Fulfillment.Speech, speech);
+                    await HistoryWrite(Received.Result.Fulfillment.Speech, speech);
                     if (speech)
                         StartSpeak.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
                     return;
@@ -284,7 +292,7 @@ namespace MiaAI
                             item.reminder = summary;
                             item.datetime = converted;
                             item.Notified = false;
-                            HistoryWrite("I'll remind you to " + summary + " on " + converted.ToString() + ". Ready to confirm?", speech); 
+                            await HistoryWrite("I'll remind you to " + summary + " on " + converted.ToString() + ". Ready to confirm?", speech); 
                             if (speech)
                                 Dispatcher.Invoke((Action)(() =>
                                 {
@@ -376,7 +384,6 @@ namespace MiaAI
                             break;
                     }
                 }
-                StartSpeakImage.Source = new BitmapImage(new Uri(@"Assets\microMute.jpg",UriKind.Relative));
                 StartCommandWaiting.Invoke(this, new EventArgs());
                 IsDone = true;
             }
@@ -436,6 +443,7 @@ namespace MiaAI
                     this.micClient.EndMicAndRecognition();
                     string Result = null;
                     this.textBox.Clear();
+                    StartSpeakImage.Source = new BitmapImage(new Uri(@"Assets\microMute.jpg", UriKind.Relative));
                     if (e.PhraseResponse.Results.Length != 0)
                     {
                         Result += e.PhraseResponse.Results[0].DisplayText;
