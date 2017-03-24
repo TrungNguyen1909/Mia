@@ -28,23 +28,13 @@
                 </Grid>
             </VisualBrush.Visual>
         </VisualBrush>
+        
     </Window.Resources>
     <Grid FocusManager.FocusedElement="{Binding ElementName=textBox}">
-        
 
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="36" Margin="149,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="16" VerticalContentAlignment="Center">
-            <TextBox.Style>
-                <Style TargetType="{x:Type TextBox}">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding ElementName=textBox,Path=Text}"  Value="" >
-                            <Setter Property="Background" Value="{StaticResource Hint}"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-                
-            </TextBox.Style>
 
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="36" Margin="149,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="16" VerticalContentAlignment="Center" >
+            
         </TextBox>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="258" Margin="149,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" IsReadOnly="True" FontSize="20"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="29,89,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.001,0.287"/>

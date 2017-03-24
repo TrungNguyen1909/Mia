@@ -51,13 +51,24 @@ namespace MiaAI
             IsDone = false;
             item = new Reminder();
             textBox.KeyDown += TextBox_KeyDown;
+            textBox.TextChanged += TextBox_TextChanged;
             App.StartListeningRequest += StartListeningRequest;
             this.Closing += MainWindow_Closing;
         }
 
+        
+
         private void Initialize()
         {
-            reader.SetOutputToDefaultAudioDevice();
+            textBox.Background = (VisualBrush)this.Resources["Hint"];
+            try
+            {
+                reader.SetOutputToDefaultAudioDevice();
+            }
+            catch
+            {
+                MessageBox.Show("Speakers or headphone is not detected on your device. Please plug in to hear the assistant voice.","Sound Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             try
             {
                 reader.SelectVoice("Microsoft Eva Mobile");
@@ -90,7 +101,6 @@ namespace MiaAI
         {
             Dispatcher.Invoke(() =>
             {
-                textBox.Background = (VisualBrush)this.Resources["Hint"];
                 if (write)
                 {
                     textBox1.AppendText(s + "\n"); this.textBox1.ScrollToEnd();
@@ -352,9 +362,9 @@ namespace MiaAI
                                 Choice = Choices.Next()%result.Count-1;
                                 var picked = result[Choice];
                                 if (IsToday)
-                                    HistoryWrite("On this day in " + picked["year"].ToString() + ", " + picked["text"], speech);
+                                    HistoryWrite("On this day in " + picked["year"].ToString() + ", " +AccentsRemover.RemoveAccents( picked["text"].ToString()), speech);
                                 else
-                                    HistoryWrite("On "+ChosenDate.ToShortDateString() +" in " + picked["year"].ToString() + ", " + picked["text"], speech);
+                                    HistoryWrite("On "+ChosenDate.ToShortDateString() +" in " + picked["year"].ToString() + ", " +AccentsRemover.RemoveAccents( picked["text"].ToString()), speech);
                             }
                             break;
                         case "dictionary.search":
@@ -378,6 +388,21 @@ namespace MiaAI
                                     }
                                 }
                             }
+                            break;
+                        case "knowledge.search":
+                            var knowledgeresult = Knowledge.GetKnowledge(Received.Result.Parameters["q"].ToString());
+                            if (knowledgeresult != null)
+                            {
+                                if(knowledgeresult["imageurl"]!=null)
+                                {
+                                    var imageurl = new Uri(knowledgeresult["imageurl"].ToString(), UriKind.Absolute);
+                                    image.Source = new BitmapImage(imageurl);
+                                }
+                                HistoryWrite(knowledgeresult["data"], speech);
+                            }
+                            else
+                                Process.Start(String.Concat("https://www.google.com/search?q=" + Received.Result.Parameters["q"]));
+
                             break;
                         default:
                             HistoryWrite(Received.Result.Fulfillment.Speech, speech);
@@ -459,7 +484,13 @@ namespace MiaAI
             }
             catch { }
         }
-
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (textBox.Text == "")
+                textBox.Background = (VisualBrush)this.Resources["Hint"];
+            else
+                textBox.Background = Brushes.Transparent;
+        }
         private void StartSpeak_Click(object sender, RoutedEventArgs e)
         {
             this.StopCommandWaiting.Invoke(this, new EventArgs());

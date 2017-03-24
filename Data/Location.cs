@@ -48,7 +48,7 @@ namespace Data
                 var getJsonres = parseJson["results"][0];
                 //var getJson = getJsonres["address_components"][1];
                 var getAddress = getJsonres["formatted_address"];
-                string Address = getAddress.ToString();
+                string Address =AccentsRemover.RemoveAccents( getAddress.ToString());
                 return Address;
             }
             else return null;

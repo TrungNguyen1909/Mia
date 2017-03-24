@@ -20,22 +20,31 @@ namespace MiaAI
     {
         public static event EventHandler StartListeningRequest;
         MainWindow MainUI = new MainWindow();
+        public bool isMicrophone = true;
         BackgroundWorker ReminderEngine = new BackgroundWorker();
         SpeechRecognitionEngine listener = new SpeechRecognitionEngine();
         Timer timer = new Timer(60000);
         private void Listener_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            if(MainUI.Visibility==Visibility.Hidden)
+            if (e.Result.Confidence >= 0.7)
             {
-                MainUI.Show();
+                if (MainUI.Visibility == Visibility.Hidden)
+                {
+                    MainUI.Show();
+                }
+                StartListeningRequest.Invoke(this, new EventArgs());
             }
-            StartListeningRequest.Invoke(this,new EventArgs());
         }
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             listener.LoadGrammar(new Grammar(new GrammarBuilder(new Choices(new string[] { "Hey Mia", "Mia" }))));
-            listener.SetInputToDefaultAudioDevice();
-            if (!isRunningOnBattery)
+            
+            try
+            {
+                listener.SetInputToDefaultAudioDevice();
+            }
+            catch { isMicrophone = false; }
+            if ((!isRunningOnBattery)&&isMicrophone)
             {
                 listener.RecognizeAsync();
                 Debug.WriteLine("Started waiting for command.");
@@ -83,13 +92,13 @@ namespace MiaAI
 
         private void MainUI_StartCommandWaiting(object sender, EventArgs e)
         {
-            if((!isRunningOnBattery)&&(listener.AudioState==AudioState.Stopped)) listener.RecognizeAsync();
+            if((!isRunningOnBattery)&&(listener.AudioState==AudioState.Stopped)&&(isMicrophone)) listener.RecognizeAsync();
         }
 
         private void MainUI_StopCommandWaiting(object sender, EventArgs e)
         {
-            if(listener.AudioState!=AudioState.Stopped)
-            listener.RecognizeAsyncStop();
+            if ((listener.AudioState != AudioState.Stopped) && (isMicrophone))
+                listener.RecognizeAsyncStop();
         }
         Boolean isRunningOnBattery =(System.Windows.Forms.SystemInformation.PowerStatus.PowerLineStatus == System.Windows.Forms.PowerLineStatus.Offline);
     }
