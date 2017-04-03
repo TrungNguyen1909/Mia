@@ -36,7 +36,9 @@
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="36" Margin="149,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="16" VerticalContentAlignment="Center" >
             
         </TextBox>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="258" Margin="149,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" IsReadOnly="True" FontSize="20"/>
+        <RichTextBox x:Name="textBox1" HorizontalAlignment="Left" Height="258" Margin="149,10,0,0" VerticalAlignment="Top" Width="341" IsReadOnly="True" FontSize="20" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            
+        </RichTextBox>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="29,89,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.001,0.287"/>
         <Button x:Name="StartSpeak" HorizontalAlignment="Left" Margin="55,275,0,0" VerticalAlignment="Top" Width="31" Click="StartSpeak_Click">
             <Image x:Name="StartSpeakImage" Source="Assets\microMute.jpg"/>

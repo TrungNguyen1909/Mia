@@ -24,6 +24,7 @@ using SmartHome;
 using Store;
 using System.Threading;
 using System.ComponentModel;
+using MiaAI.Properties;
 
 namespace MiaAI
 {
@@ -97,31 +98,37 @@ namespace MiaAI
             micClient.OnPartialResponseReceived += MicClient_OnPartialResponseReceived;
 
         }
-        private async Task HistoryWrite(string s, bool speech = false, bool write = true)
+        private async Task HistoryWrite(string s, bool speech = false, bool write = true,bool noSpeak=false)
         {
-            Dispatcher.Invoke(() =>
+            if (s != null)
             {
-                if (write)
+                Dispatcher.Invoke(() =>
                 {
-                    textBox1.AppendText(s + "\n"); this.textBox1.ScrollToEnd();
+                    if (write)
+                    {
+                        textBox1.AppendText(s + "\n"); this.textBox1.ScrollToEnd();
+                    }
+                });
+                var settings = new Settings();
+                if (((speech) || ((bool)settings["VoiceFeedback"])) && (!noSpeak))
+                {
+                    await Task.Run(() => reader.Speak(s));
+
                 }
-            });
-            if (speech)
-            {
-                await Task.Run(() =>reader.Speak(s));
-                
             }
         }
         
         private async void NLP(string sentence, bool speech = false)
         {
-            if (sentence != null)
+            if (sentence != null&&sentence!="")
             {
-                if (IsDone) { textBox1.Clear(); image.Source = null; }
+                if (IsDone) { textBox1.Document.Blocks.Clear(); image.Source = null; }
                 StopCommandWaiting.Invoke(this, new EventArgs());
-                HistoryWrite(sentence);
-                
+                textBox1.AppendText(sentence + "\n"); this.textBox1.ScrollToEnd();
+                if(sentence.Contains("="))sentence=sentence.Replace("=", "->");
+               
                 var Received = lus.TextRequest(sentence);
+                if (sentence.Contains("->")) sentence.Replace("->", "=");
                 if (Received.Result.ActionIncomplete)
                 {
                     await HistoryWrite(Received.Result.Fulfillment.Speech, speech);
@@ -268,7 +275,7 @@ namespace MiaAI
                         case "reminder.add":
                             BitmapImage bir = new BitmapImage();
                             bir.BeginInit();
-                            bir.UriSource = new Uri(@"\Assets\Reminder.png", UriKind.RelativeOrAbsolute);
+                            bir.UriSource = new Uri(@"\Assets\Reminder.png", UriKind.Relative);
                             bir.EndInit();
                             image.Stretch = Stretch.Uniform;
                             image.Source = bir;
@@ -378,27 +385,34 @@ namespace MiaAI
                             {
                                 var First = definition[0];
                                 HistoryWrite(q + " has a " + First.lexicalCategory + " meaning, " + First.entries[0].senses[0].definitions[0],speech,false);
-                                HistoryWrite(q);
+                                HistoryWrite(q, false, true, true);
                                 foreach(var entry in definition)
                                 {
-                                    HistoryWrite(entry.lexicalCategory);
+                                    HistoryWrite(entry.lexicalCategory, false, true, true);
                                     foreach(var def in entry.entries[0].senses)
                                     {
-                                        HistoryWrite("-" + def.definitions[0]);
+                                        HistoryWrite("-" + def.definitions[0], false, true, true);
                                     }
                                 }
                             }
                             break;
                         case "knowledge.search":
+                            Received.Result.Parameters["q"] = Received.Result.Parameters["q"].ToString().Replace("->", "=");
                             var knowledgeresult = Knowledge.GetKnowledge(Received.Result.Parameters["q"].ToString());
                             if (knowledgeresult != null)
                             {
-                                if(knowledgeresult["imageurl"]!=null)
-                                {
-                                    var imageurl = new Uri(knowledgeresult["imageurl"].ToString(), UriKind.Absolute);
-                                    image.Source = new BitmapImage(imageurl);
-                                }
-                                HistoryWrite(knowledgeresult["data"], speech);
+                                
+                                //BitmapImage bitmap = new BitmapImage(new Uri(@"Assets\simple.jpg", UriKind.Relative));
+                                BitmapImage bitmap = new BitmapImage(new Uri(knowledgeresult["simpleurl"],UriKind.Absolute));
+                                
+                                Image simpleImage = new Image();
+                                simpleImage.Source = bitmap;
+                                simpleImage.Stretch = Stretch.Uniform;
+                                InlineUIContainer container = new InlineUIContainer(simpleImage);
+                                Paragraph paragraph = new Paragraph(container);
+                                HistoryWrite(knowledgeresult["response"], speech);
+                                textBox1.Document.Blocks.Add(paragraph);
+
                             }
                             else
                                 Process.Start(String.Concat("https://www.google.com/search?q=" + Received.Result.Parameters["q"]));
@@ -452,8 +466,8 @@ namespace MiaAI
             Dispatcher.Invoke((Action)(() =>
             {
                 textBox.Clear();
-                this.textBox1.Text +=("An error Occured"+"\n"); this.textBox1.ScrollToEnd();
-                this.textBox1.Text += ("Error data:" + e.SpeechErrorText + "\n");
+                this.textBox1.AppendText(("An error Occured"+"\n")); this.textBox1.ScrollToEnd();
+                this.textBox1.AppendText("Error data:" + e.SpeechErrorText + "\n");
                 this.StartCommandWaiting.Invoke(this, new EventArgs());
                 
             }));

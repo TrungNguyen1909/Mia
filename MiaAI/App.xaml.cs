@@ -11,6 +11,7 @@ using Store;
 using Data;
 using System.Timers;
 using System.Diagnostics;
+using MiaAI.Properties;
 namespace MiaAI
 {
     /// <summary>
@@ -21,6 +22,7 @@ namespace MiaAI
         public static event EventHandler StartListeningRequest;
         MainWindow MainUI = new MainWindow();
         public bool isMicrophone = true;
+        Settings settings;
         BackgroundWorker ReminderEngine = new BackgroundWorker();
         SpeechRecognitionEngine listener = new SpeechRecognitionEngine();
         Timer timer = new Timer(60000);
@@ -44,7 +46,9 @@ namespace MiaAI
                 listener.SetInputToDefaultAudioDevice();
             }
             catch { isMicrophone = false; }
-            if ((!isRunningOnBattery)&&isMicrophone)
+            settings = new Settings();
+            
+            if ((!isRunningOnBattery)&&isMicrophone&&((bool)settings["HeyMia"]==true))
             {
                 listener.RecognizeAsync();
                 Debug.WriteLine("Started waiting for command.");
@@ -92,7 +96,7 @@ namespace MiaAI
 
         private void MainUI_StartCommandWaiting(object sender, EventArgs e)
         {
-            if((!isRunningOnBattery)&&(listener.AudioState==AudioState.Stopped)&&(isMicrophone)) listener.RecognizeAsync();
+            if((!isRunningOnBattery)&&(listener.AudioState==AudioState.Stopped)&&(isMicrophone) && ((bool)settings["HeyMia"] == true)) listener.RecognizeAsync();
         }
 
         private void MainUI_StopCommandWaiting(object sender, EventArgs e)
