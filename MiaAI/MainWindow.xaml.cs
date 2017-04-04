@@ -125,10 +125,8 @@ namespace MiaAI
                 if (IsDone) { textBox1.Document.Blocks.Clear(); image.Source = null; }
                 StopCommandWaiting.Invoke(this, new EventArgs());
                 textBox1.AppendText(sentence + "\n"); this.textBox1.ScrollToEnd();
-                if(sentence.Contains("="))sentence=sentence.Replace("=", "->");
                
                 var Received = lus.TextRequest(sentence);
-                if (sentence.Contains("->")) sentence.Replace("->", "=");
                 if (Received.Result.ActionIncomplete)
                 {
                     await HistoryWrite(Received.Result.Fulfillment.Speech, speech);
@@ -397,14 +395,15 @@ namespace MiaAI
                             }
                             break;
                         case "knowledge.search":
-                            Received.Result.Parameters["q"] = Received.Result.Parameters["q"].ToString().Replace("->", "=");
+                            
                             var knowledgeresult = Knowledge.GetKnowledge(Received.Result.Parameters["q"].ToString());
                             if (knowledgeresult != null)
                             {
                                 
                                 //BitmapImage bitmap = new BitmapImage(new Uri(@"Assets\simple.jpg", UriKind.Relative));
                                 BitmapImage bitmap = new BitmapImage(new Uri(knowledgeresult["simpleurl"],UriKind.Absolute));
-                                
+                                BitmapImage bik = new BitmapImage(new Uri(knowledgeresult["imageurl"], UriKind.Absolute));
+                                image.Source = bik;
                                 Image simpleImage = new Image();
                                 simpleImage.Source = bitmap;
                                 simpleImage.Stretch = Stretch.Uniform;
