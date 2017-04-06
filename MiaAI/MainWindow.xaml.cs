@@ -25,6 +25,7 @@ using Store;
 using System.Threading;
 using System.ComponentModel;
 using MiaAI.Properties;
+using System.Windows.Interop;
 
 namespace MiaAI
 {
@@ -47,8 +48,6 @@ namespace MiaAI
         {
             this.InitializeComponent();
             this.Initialize();
-            //textBox.GotFocus += TextBox_GotFocus;
-            //textBox.LostFocus += TextBox_LostFocus;
             IsDone = false;
             item = new Reminder();
             textBox.KeyDown += TextBox_KeyDown;
@@ -82,6 +81,20 @@ namespace MiaAI
             lus = new ApiAi(config);
         }
         #endregion
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
+            source.AddHook(WndProc);
+        }
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            if (msg == App.SingleInstance.WM_SHOWFIRSTINSTANCE)
+            {
+                this.Show();
+            }
+            return IntPtr.Zero;
+        }
         private void CreateMicrophoneRecoClient()
         {
             try
@@ -399,10 +412,16 @@ namespace MiaAI
                             var knowledgeresult = Knowledge.GetKnowledge(Received.Result.Parameters["q"].ToString());
                             if (knowledgeresult != null)
                             {
-                                
+
                                 //BitmapImage bitmap = new BitmapImage(new Uri(@"Assets\simple.jpg", UriKind.Relative));
-                                BitmapImage bitmap = new BitmapImage(new Uri(knowledgeresult["simpleurl"],UriKind.Absolute));
-                                BitmapImage bik = new BitmapImage(new Uri(knowledgeresult["imageurl"], UriKind.Absolute));
+                                BitmapImage bitmap=new BitmapImage();
+                                BitmapImage bik = new BitmapImage();
+                                try
+                                {
+                                    bitmap = new BitmapImage(new Uri(knowledgeresult["simpleurl"], UriKind.Absolute));
+                                    bik = new BitmapImage(new Uri(knowledgeresult["imageurl"], UriKind.Absolute));
+                                }
+                                catch { }
                                 image.Source = bik;
                                 Image simpleImage = new Image();
                                 simpleImage.Source = bitmap;

@@ -12,6 +12,10 @@ using Data;
 using System.Timers;
 using System.Diagnostics;
 using MiaAI.Properties;
+using System.Reflection;
+using System.Threading;
+using System.Runtime.InteropServices;
+
 namespace MiaAI
 {
     /// <summary>
@@ -25,7 +29,7 @@ namespace MiaAI
         Settings settings;
         BackgroundWorker ReminderEngine = new BackgroundWorker();
         SpeechRecognitionEngine listener = new SpeechRecognitionEngine();
-        Timer timer = new Timer(60000);
+        System.Timers.Timer timer = new System.Timers.Timer(60000);
         private void Listener_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             if (e.Result.Confidence >= 0.7)
@@ -39,32 +43,39 @@ namespace MiaAI
         }
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            listener.LoadGrammar(new Grammar(new GrammarBuilder(new Choices(new string[] { "Hey Mia", "Mia" }))));
-            
-            try
+            if (!SingleInstance.Start())
             {
-                listener.SetInputToDefaultAudioDevice();
+                SingleInstance.ShowFirstInstance();
+                return;
             }
-            catch { isMicrophone = false; }
-            settings = new Settings();
-            
-            if ((!isRunningOnBattery)&&isMicrophone&&((bool)settings["HeyMia"]==true))
+            else
             {
-                listener.RecognizeAsync();
-                Debug.WriteLine("Started waiting for command.");
-            }
-            else Debug.WriteLine("Handoff is turned off on battery.");
-            listener.SpeechRecognized += Listener_SpeechRecognized;
-            MainUI.StopCommandWaiting += MainUI_StopCommandWaiting;
-            MainUI.StartCommandWaiting += MainUI_StartCommandWaiting;
-            ReminderEngine.DoWork += StartReminderService;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
-            ReminderEngine.RunWorkerAsync();
-            if (e.Args.Length == 0)
-                MainUI.Show();
-            else MainUI.Hide();
+                listener.LoadGrammar(new Grammar(new GrammarBuilder(new Choices(new string[] { "Hey Mia", "Mia" }))));
 
+                try
+                {
+                    listener.SetInputToDefaultAudioDevice();
+                }
+                catch { isMicrophone = false; }
+                settings = new Settings();
+
+                if ((!isRunningOnBattery) && isMicrophone && ((bool)settings["HeyMia"] == true))
+                {
+                    listener.RecognizeAsync();
+                    Debug.WriteLine("Started waiting for command.");
+                }
+                else Debug.WriteLine("Handoff is turned off on battery.");
+                listener.SpeechRecognized += Listener_SpeechRecognized;
+                MainUI.StopCommandWaiting += MainUI_StopCommandWaiting;
+                MainUI.StartCommandWaiting += MainUI_StartCommandWaiting;
+                ReminderEngine.DoWork += StartReminderService;
+                timer.Elapsed += Timer_Elapsed;
+                timer.Start();
+                ReminderEngine.RunWorkerAsync();
+                if (e.Args.Length == 0)
+                    MainUI.Show();
+                else MainUI.Hide();
+            }
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -105,5 +116,68 @@ namespace MiaAI
                 listener.RecognizeAsyncStop();
         }
         Boolean isRunningOnBattery =(System.Windows.Forms.SystemInformation.PowerStatus.PowerLineStatus == System.Windows.Forms.PowerLineStatus.Offline);
+        public static string AssemblyGuid()
+        {
+                object[] attributes = Assembly.GetEntryAssembly().GetCustomAttributes(typeof(GuidAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return String.Empty;
+                }
+                return ((GuidAttribute)attributes[0]).Value;
+        }
+        static public class SingleInstance
+        {
+            public static readonly int WM_SHOWFIRSTINSTANCE =
+                WinApi.RegisterWindowMessage("WM_SHOWFIRSTINSTANCE|{0}", AssemblyGuid());
+            static Mutex mutex;
+            static public bool Start()
+            {
+                bool onlyInstance = false;
+                string mutexName = String.Format("Local\\{0}", AssemblyGuid());
+
+                // if you want your app to be limited to a single instance
+                // across ALL SESSIONS (multiple users & terminal services), then use the following line instead:
+                // string mutexName = String.Format("Global\\{0}", ProgramInfo.AssemblyGuid);
+
+                mutex = new Mutex(true, mutexName, out onlyInstance);
+                return onlyInstance;
+            }
+            static public void ShowFirstInstance()
+            {
+                WinApi.PostMessage(
+                    (IntPtr)WinApi.HWND_BROADCAST,
+                    WM_SHOWFIRSTINSTANCE,
+                    IntPtr.Zero,
+                    IntPtr.Zero);
+            }
+            static public void Stop()
+            {
+                mutex.ReleaseMutex();
+            }
+        }
+        static public class WinApi
+        {
+            [DllImport("user32")]
+            public static extern int RegisterWindowMessage(string message);
+
+            public static int RegisterWindowMessage(string format, params object[] args)
+            {
+                string message = String.Format(format, args);
+                return RegisterWindowMessage(message);
+            }
+
+            public const int HWND_BROADCAST = 0xffff;
+            public const int SW_SHOWNORMAL = 1;
+
+            [DllImport("user32")]
+            public static extern bool PostMessage(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam);
+
+            [DllImportAttribute("user32.dll")]
+            public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+            [DllImportAttribute("user32.dll")]
+            public static extern bool SetForegroundWindow(IntPtr hWnd);
+            
+        }
     }
 }
