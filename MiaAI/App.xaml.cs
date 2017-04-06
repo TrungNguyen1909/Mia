@@ -46,7 +46,7 @@ namespace MiaAI
             if (!SingleInstance.Start())
             {
                 SingleInstance.ShowFirstInstance();
-                return;
+                Application.Current.Shutdown();
             }
             else
             {

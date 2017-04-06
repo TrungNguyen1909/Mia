@@ -92,6 +92,7 @@ namespace MiaAI
             if (msg == App.SingleInstance.WM_SHOWFIRSTINSTANCE)
             {
                 this.Show();
+                this.Activate();
             }
             return IntPtr.Zero;
         }
