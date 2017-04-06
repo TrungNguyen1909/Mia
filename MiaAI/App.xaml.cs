@@ -23,13 +23,18 @@ namespace MiaAI
     /// </summary>
     public partial class App : Application
     {
+        #region Public field
         public static event EventHandler StartListeningRequest;
-        MainWindow MainUI = new MainWindow();
         public bool isMicrophone = true;
+        #endregion
+        #region Private field
+        MainWindow MainUI = new MainWindow();
         Settings settings;
         BackgroundWorker ReminderEngine = new BackgroundWorker();
         SpeechRecognitionEngine listener = new SpeechRecognitionEngine();
         System.Timers.Timer timer = new System.Timers.Timer(60000);
+        #endregion
+        #region Event Handler
         private void Listener_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             if (e.Result.Confidence >= 0.7)
@@ -115,6 +120,8 @@ namespace MiaAI
             if ((listener.AudioState != AudioState.Stopped) && (isMicrophone))
                 listener.RecognizeAsyncStop();
         }
+        #endregion
+        #region Check System Information
         Boolean isRunningOnBattery =(System.Windows.Forms.SystemInformation.PowerStatus.PowerLineStatus == System.Windows.Forms.PowerLineStatus.Offline);
         public static string AssemblyGuid()
         {
@@ -125,6 +132,7 @@ namespace MiaAI
                 }
                 return ((GuidAttribute)attributes[0]).Value;
         }
+        #endregion
         static public class SingleInstance
         {
             public static readonly int WM_SHOWFIRSTINSTANCE =

@@ -81,6 +81,7 @@ namespace MiaAI
             lus = new ApiAi(config);
         }
         #endregion
+        #region Background Wakeup 
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
@@ -96,6 +97,11 @@ namespace MiaAI
             }
             return IntPtr.Zero;
         }
+        #endregion
+        #region Main
+        /// <summary>
+        /// Configure the Microphone Client to work
+        /// </summary>
         private void CreateMicrophoneRecoClient()
         {
             try
@@ -107,11 +113,16 @@ namespace MiaAI
                 MessageBox.Show(e.Message,"Error While Initializiing Mic Client");
                 //App.Current.Shutdown(1);
             }
+            #region micClientEventHandler
             micClient.OnResponseReceived += this.MicClient_OnResponseReceived;
             micClient.OnConversationError += this.MicClient_OnConversationError;
             micClient.OnPartialResponseReceived += MicClient_OnPartialResponseReceived;
-
+            #endregion
         }
+        /// <summary>
+        /// Write content
+        /// </summary>
+        /// <param name="s">Sentence to write and Speak out</param>
         private async Task HistoryWrite(string s, bool speech = false, bool write = true,bool noSpeak=false)
         {
             if (s != null)
@@ -131,31 +142,41 @@ namespace MiaAI
                 }
             }
         }
-        
+        /// <summary>
+        /// Neutral Language Processing
+        /// </summary>
         private async void NLP(string sentence, bool speech = false)
         {
             if (sentence != null&&sentence!="")
             {
+                #region Pre-Processing
                 if (IsDone) { textBox1.Document.Blocks.Clear(); image.Source = null; }
                 StopCommandWaiting.Invoke(this, new EventArgs());
                 textBox1.AppendText(sentence + "\n"); this.textBox1.ScrollToEnd();
                
                 var Received = lus.TextRequest(sentence);
+                #endregion
                 if (Received.Result.ActionIncomplete)
                 {
+                    #region ActionIncomplete
                     await HistoryWrite(Received.Result.Fulfillment.Speech, speech);
                     if (speech)
                         StartSpeak.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
                     return;
                 }
+                #endregion
                 else
                 {
+                    #region ActionComplete
                     DeviceManager devman = new DeviceManager();
                     switch (Received.Result.Action)
                     {
+                        #region WebSearch
                         case "web.search":
                             if (Received.Result.Parameters.ContainsKey("q")) Process.Start(String.Concat("https://www.google.com/search?q=" + Received.Result.Parameters["q"]));
                             break;
+                        #endregion
+                        #region Smarthome
                         case "smarthome.appliances_on":
                             if (Received.Result.Parameters["all"].ToString() == "true")
                             {
@@ -209,6 +230,8 @@ namespace MiaAI
                                     HistoryWrite("I can't find the " + dev, speech);
                             }
                             break;
+                        #endregion
+                        #region Clock
                         case "clock.date":
                             if (Received.Result.Parameters["date"].ToString() != null)
                                 HistoryWrite("It's " + Received.Result.Parameters["date"], speech);
@@ -218,6 +241,8 @@ namespace MiaAI
                         case "clock.time":
                             HistoryWrite("It's " + DateTime.Now.ToShortTimeString(), speech);
                             break;
+                        #endregion
+                        #region Weather
                         case "weather.search":
                             var WE = new Weather();
                             DateTime Now = DateTime.Now;
@@ -272,6 +297,8 @@ namespace MiaAI
                                 }
                             }
                             break;
+                        #endregion
+                        #region Easteregg
                         case "easteregg.singing":
                             int Choice = Choices.Next() % 3;
                             var path = System.IO.Path.Combine("Singing", Convert.ToString(Choice)+".wav");
@@ -284,6 +311,8 @@ namespace MiaAI
                                 HistoryWrite("Oh he floats through the air with the greatest of ease, this daring young man on the flying trapeze.");
                             else HistoryWrite("Twinkle twinkle little star, how I wonder what you are!");
                             break;
+                        #endregion
+                        #region Reminder
                         case "reminder.add":
                             BitmapImage bir = new BitmapImage();
                             bir.BeginInit();
@@ -347,6 +376,8 @@ namespace MiaAI
                             item = new Reminder();
                             HistoryWrite(Received.Result.Fulfillment.Speech, speech);
                             break;
+                        #endregion
+                        #region Location
                         case "location.current":
                             string loc = Location.GetCurrentAddress();
                             if (loc != null)
@@ -358,6 +389,8 @@ namespace MiaAI
                                 HistoryWrite(Received.Result.Fulfillment.Speech, speech);
                             }
                             break;
+                        #endregion
+                        #region History
                         case "history.event":
                             List<Dictionary<string, object>> result = null;
                             DateTime ChosenDate=new DateTime();
@@ -386,6 +419,8 @@ namespace MiaAI
                                     HistoryWrite("On "+ChosenDate.ToShortDateString() +" in " + picked["year"].ToString() + ", " +AccentsRemover.RemoveAccents( picked["text"].ToString()), speech);
                             }
                             break;
+                        #endregion
+                        #region Knowledge & Dictionary
                         case "dictionary.search":
                             string q = Received.Result.Parameters["q"].ToString();
                             var definition = Dictionary.Define(q);
@@ -437,15 +472,18 @@ namespace MiaAI
                                 Process.Start(String.Concat("https://www.google.com/search?q=" + Received.Result.Parameters["q"]));
 
                             break;
+                        #endregion
                         default:
                             HistoryWrite(Received.Result.Fulfillment.Speech, speech);
                             break;
                     }
+                    #endregion
                 }
                 StartCommandWaiting.Invoke(this, new EventArgs());
                 IsDone = true;
             }
         }
+        #endregion
         #region EventHandler
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

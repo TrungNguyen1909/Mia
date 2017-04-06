@@ -135,9 +135,6 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UIAutomationProvider">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="WindowsBase">
       <Private>True</Private>
     </Reference>
