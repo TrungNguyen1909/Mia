@@ -8,6 +8,7 @@ A personal assistant that can help you with your works.
 - Check for events that happened in the past.
 - Define English words
 - Controling devices(testing)
+- Math, Physics and Chemistry
 - Some more eastereggs....
 
 ### How do I get set up? ###
