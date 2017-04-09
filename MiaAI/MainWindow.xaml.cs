@@ -455,6 +455,10 @@ namespace MiaAI
                                 try
                                 {
                                     bitmap = new BitmapImage(new Uri(knowledgeresult["simpleurl"], UriKind.Absolute));
+                                }
+                                catch { }
+                                try
+                                {
                                     bik = new BitmapImage(new Uri(knowledgeresult["imageurl"], UriKind.Absolute));
                                 }
                                 catch { }
