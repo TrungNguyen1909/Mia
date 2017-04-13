@@ -21,25 +21,61 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1610CC9F6AE1A4DDA042F41342691A9F"
+        "MsmKey" = "8:_17EBDFBCF5227BF7B81C03C88BE05108"
+        "OwnerKey" = "8:_0AB2D34EB410489DBD3DE9822E703528"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_17EBDFBCF5227BF7B81C03C88BE05108"
+        "OwnerKey" = "8:_2AD94399A5818BBC7940056957EE5AD2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_17EBDFBCF5227BF7B81C03C88BE05108"
+        "OwnerKey" = "8:_A823A2A95C704668B58187339187AB8A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_17EBDFBCF5227BF7B81C03C88BE05108"
         "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2910450E5297C6D12CCA32F2111AB347"
-        "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
+        "MsmKey" = "8:_17EBDFBCF5227BF7B81C03C88BE05108"
+        "OwnerKey" = "8:_6C31C79141F4CBE7EFA444C13FFAE956"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_40A6AA4AE8ECE261220B75ADCFB285AE"
+        "MsmKey" = "8:_2AD94399A5818BBC7940056957EE5AD2"
+        "OwnerKey" = "8:_8A7BF6FD9CA7C58030DA92AC7C52BBAB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2AD94399A5818BBC7940056957EE5AD2"
+        "OwnerKey" = "8:_A823A2A95C704668B58187339187AB8A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2AD94399A5818BBC7940056957EE5AD2"
         "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_53B0D465C4D98437B17CDB14C1F3CDA2"
+        "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6C31C79141F4CBE7EFA444C13FFAE956"
         "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -81,62 +117,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_89CB98FC2DD01C46A36F1A572790DEBC"
+        "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8A7BF6FD9CA7C58030DA92AC7C52BBAB"
+        "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A823A2A95C704668B58187339187AB8A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B23612359BEEDD2EE87AC870277C1215"
+        "MsmKey" = "8:_B98F1E56F522EB049BDA46CF2F6816F4"
         "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D8FD148F9DD41E99E53B4B07BA7A469D"
-        "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D8FD148F9DD41E99E53B4B07BA7A469D"
-        "OwnerKey" = "8:_A823A2A95C704668B58187339187AB8A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D8FD148F9DD41E99E53B4B07BA7A469D"
-        "OwnerKey" = "8:_40A6AA4AE8ECE261220B75ADCFB285AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF0C90D4B980D4B2D15096BA7D3B47D7"
-        "OwnerKey" = "8:_0AB2D34EB410489DBD3DE9822E703528"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF0C90D4B980D4B2D15096BA7D3B47D7"
-        "OwnerKey" = "8:_A823A2A95C704668B58187339187AB8A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF0C90D4B980D4B2D15096BA7D3B47D7"
-        "OwnerKey" = "8:_802FFED44AC0498DA1C471686B98E8DC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF0C90D4B980D4B2D15096BA7D3B47D7"
-        "OwnerKey" = "8:_1610CC9F6AE1A4DDA042F41342691A9F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF0C90D4B980D4B2D15096BA7D3B47D7"
-        "OwnerKey" = "8:_D8FD148F9DD41E99E53B4B07BA7A469D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -154,31 +154,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_40A6AA4AE8ECE261220B75ADCFB285AE"
+        "OwnerKey" = "8:_8A7BF6FD9CA7C58030DA92AC7C52BBAB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2910450E5297C6D12CCA32F2111AB347"
+        "OwnerKey" = "8:_B98F1E56F522EB049BDA46CF2F6816F4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B23612359BEEDD2EE87AC870277C1215"
+        "OwnerKey" = "8:_89CB98FC2DD01C46A36F1A572790DEBC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1610CC9F6AE1A4DDA042F41342691A9F"
+        "OwnerKey" = "8:_6C31C79141F4CBE7EFA444C13FFAE956"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D8FD148F9DD41E99E53B4B07BA7A469D"
+        "OwnerKey" = "8:_2AD94399A5818BBC7940056957EE5AD2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -202,7 +202,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DF0C90D4B980D4B2D15096BA7D3B47D7"
+        "OwnerKey" = "8:_17EBDFBCF5227BF7B81C03C88BE05108"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -298,7 +298,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.5"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.5.2"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=395269"
                 }
@@ -306,20 +306,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1610CC9F6AE1A4DDA042F41342691A9F"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_17EBDFBCF5227BF7B81C03C88BE05108"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ApiAiSDK, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1610CC9F6AE1A4DDA042F41342691A9F"
+                    "_17EBDFBCF5227BF7B81C03C88BE05108"
                     {
-                    "Name" = "8:ApiAiSDK.dll"
+                    "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ApiAiSDK.dll"
+            "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
@@ -337,51 +337,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2910450E5297C6D12CCA32F2111AB347"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2AD94399A5818BBC7940056957EE5AD2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SmartHome, Version=1.0.6286.27175, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Data, Version=1.0.6311.35480, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2910450E5297C6D12CCA32F2111AB347"
+                    "_2AD94399A5818BBC7940056957EE5AD2"
                     {
-                    "Name" = "8:SmartHome.dll"
+                    "Name" = "8:Data.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:SmartHome.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_40A6AA4AE8ECE261220B75ADCFB285AE"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Store, Version=1.0.6286.27176, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_40A6AA4AE8ECE261220B75ADCFB285AE"
-                    {
-                    "Name" = "8:Store.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Store.dll"
+            "SourcePath" = "8:Data.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
@@ -430,6 +399,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6C31C79141F4CBE7EFA444C13FFAE956"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ApiAiSDK, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_6C31C79141F4CBE7EFA444C13FFAE956"
+                    {
+                    "Name" = "8:ApiAiSDK.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ApiAiSDK.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_86B290759A98A8F4ED7929C353D5BC25"
             {
             "AssemblyRegister" = "3:1"
@@ -461,14 +461,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B23612359BEEDD2EE87AC870277C1215"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_89CB98FC2DD01C46A36F1A572790DEBC"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SpeechClient, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:SpeechClient, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
-                    "_B23612359BEEDD2EE87AC870277C1215"
+                    "_89CB98FC2DD01C46A36F1A572790DEBC"
                     {
                     "Name" = "8:SpeechClient.dll"
                     "Attributes" = "3:512"
@@ -492,20 +492,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D8FD148F9DD41E99E53B4B07BA7A469D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8A7BF6FD9CA7C58030DA92AC7C52BBAB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Data, Version=1.0.6286.27175, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Store, Version=1.0.6311.35481, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D8FD148F9DD41E99E53B4B07BA7A469D"
+                    "_8A7BF6FD9CA7C58030DA92AC7C52BBAB"
                     {
-                    "Name" = "8:Data.dll"
+                    "Name" = "8:Store.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Data.dll"
+            "SourcePath" = "8:Store.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
@@ -523,20 +523,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF0C90D4B980D4B2D15096BA7D3B47D7"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B98F1E56F522EB049BDA46CF2F6816F4"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:SmartHome, Version=1.0.6311.35480, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DF0C90D4B980D4B2D15096BA7D3B47D7"
+                    "_B98F1E56F522EB049BDA46CF2F6816F4"
                     {
-                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Name" = "8:SmartHome.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "SourcePath" = "8:SmartHome.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
@@ -1372,7 +1372,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0AB2D34EB410489DBD3DE9822E703528"
             {
-            "SourcePath" = "8:..\\Data\\obj\\Debug\\Data.dll"
+            "SourcePath" = "8:..\\Data\\obj\\Release\\Data.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
@@ -1484,7 +1484,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_747590AAC4824FFDBA753CE2EF5F40C8"
             {
-            "SourcePath" = "8:..\\SmartHome\\obj\\Debug\\SmartHome.dll"
+            "SourcePath" = "8:..\\SmartHome\\obj\\Release\\SmartHome.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
@@ -1512,7 +1512,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_802FFED44AC0498DA1C471686B98E8DC"
             {
-            "SourcePath" = "8:..\\MiaAI\\obj\\x86\\Debug\\MiaAI.exe"
+            "SourcePath" = "8:..\\MiaAI\\obj\\x64\\Release\\MiaAI.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
@@ -1596,7 +1596,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A823A2A95C704668B58187339187AB8A"
             {
-            "SourcePath" = "8:..\\Store\\obj\\Debug\\Store.dll"
+            "SourcePath" = "8:..\\Store\\obj\\Release\\Store.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_673B6A981CA248CA9DE06850443F4B8A"
