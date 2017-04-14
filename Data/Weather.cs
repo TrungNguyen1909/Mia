@@ -15,7 +15,7 @@ namespace Data
 {
     public class Weather
     {
-        string wunderground_key = "97fca79bb0f45e0e"; // You'll need to goto http://www.wunderground.com/weather/api/, and get a key to use the API.
+        string wunderground_key = "5d6c7e2305c51574"; // You'll need to goto http://www.wunderground.com/weather/api/, and get a key to use the API.
         
         public Dictionary<string, object> GetCurrentWeather(string location = "autoip")
         {

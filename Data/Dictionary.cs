@@ -17,7 +17,7 @@ namespace Data
     {
 
         private static string appId = "e5dcdbf6";
-        private static string appKey = "57a2fa2a0a8f145bbaadb76dff20d604";
+        private static string appKey = "6e645800815e36a51a0c12439e764c7a";
         static string lang = "en";
         public static List<LexicalEntry> Define(string word)
         {

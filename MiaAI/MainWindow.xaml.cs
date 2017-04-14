@@ -77,7 +77,7 @@ namespace MiaAI
             {
                 MessageBox.Show("Please reinstall the application to fix this error!\nIf you see this error after reinstallation, your system is not supported!", "Critical Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            var config = new AIConfiguration("3c75c7c8cb6441ecbe91b894444d10ae", SupportedLanguage.English);
+            var config = new AIConfiguration("6bb0cdf023e54c868895091294ae2a0e", SupportedLanguage.English);
             lus = new ApiAi(config);
         }
         #endregion
