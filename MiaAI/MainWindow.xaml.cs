@@ -56,7 +56,6 @@ namespace MiaAI
             this.Closing += MainWindow_Closing;
         }
 
-        
 
         private void Initialize()
         {
@@ -445,7 +444,7 @@ namespace MiaAI
                             break;
                         case "knowledge.search":
                             
-                            var knowledgeresult = Knowledge.GetKnowledge(Received.Result.Parameters["q"].ToString());
+                            var knowledgeresult = Knowledge.GetKnowledge(Received.Result.Parameters["questionword"].ToString()+" "+Received.Result.Parameters["q"].ToString());
                             if (knowledgeresult != null)
                             {
 
@@ -584,6 +583,7 @@ namespace MiaAI
             }
 
         }
+        
         #endregion
         #region Events
         public event EventHandler StopCommandWaiting;

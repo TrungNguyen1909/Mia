@@ -33,6 +33,7 @@ namespace MiaAI
         BackgroundWorker ReminderEngine = new BackgroundWorker();
         SpeechRecognitionEngine listener = new SpeechRecognitionEngine();
         System.Timers.Timer timer = new System.Timers.Timer(60000);
+        AppDomain CurrentDomain = AppDomain.CurrentDomain;
         #endregion
         #region Event Handler
         private void Listener_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
@@ -56,6 +57,7 @@ namespace MiaAI
             else
             {
                 listener.LoadGrammar(new Grammar(new GrammarBuilder(new Choices(new string[] { "Hey Mia", "Mia" }))));
+                CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(AppDomainHandler);
 
                 try
                 {
@@ -81,6 +83,13 @@ namespace MiaAI
                     MainUI.Show();
                 else MainUI.Hide();
             }
+        }
+
+        private void AppDomainHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception e = (Exception)args.ExceptionObject;
+            MessageBox.Show("AppDomainHandler caught : " + e.Message+ "\nRuntime terminating:" + args.IsTerminating, "Error",MessageBoxButton.OK,MessageBoxImage.Error);
+            
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)

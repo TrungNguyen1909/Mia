@@ -58,6 +58,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" Eaz.lnk "$(TargetPath)" --msbuild-project-path "$(ProjectPath)" --msbuild-project-configuration "$(ConfigurationName)" --msbuild-project-platform "$(PlatformName)" --msbuild-solution-path "$(SolutionPath)" -n --newline-flush -v 5.6</PostBuildEvent>
+    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" dotNet_Reactor.exe -file "$(TargetPath)" -targetfile "$(TargetPath)" -q</PostBuildEvent>
   </PropertyGroup>
 </Project>
