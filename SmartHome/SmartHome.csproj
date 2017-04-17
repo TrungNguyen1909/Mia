@@ -58,6 +58,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" dotNet_Reactor.exe -file "$(TargetPath)" -targetfile "$(TargetPath)" -q</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
