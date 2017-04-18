@@ -63,7 +63,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7FCF838BE090A22DA22C467F7E4CA800"
+        "MsmKey" = "8:_9238610F9D6B62EE0C752BD18A8A2D5D"
         "OwnerKey" = "8:_B455572CA2C3445C9A887A5DC9B3A68A"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -172,7 +172,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7FCF838BE090A22DA22C467F7E4CA800"
+        "OwnerKey" = "8:_9238610F9D6B62EE0C752BD18A8A2D5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -336,14 +336,9 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SmartHome, Version=1.0.6316.32642, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:SmartHome, Version=1.0.6317.36147, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1CC9D92DB565A6787D4E5ADA6954ABAF"
-                    {
-                    "Name" = "8:SmartHome.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:SmartHome.dll"
             "TargetName" = "8:"
@@ -398,14 +393,9 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Data, Version=1.0.6316.32639, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Data, Version=1.0.6317.36146, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7585E94A5471576E61D47BC972603BA7"
-                    {
-                    "Name" = "8:Data.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Data.dll"
             "TargetName" = "8:"
@@ -425,14 +415,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7FCF838BE090A22DA22C467F7E4CA800"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9238610F9D6B62EE0C752BD18A8A2D5D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SpeechClient, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:SpeechClient, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_7FCF838BE090A22DA22C467F7E4CA800"
+                    "_9238610F9D6B62EE0C752BD18A8A2D5D"
                     {
                     "Name" = "8:SpeechClient.dll"
                     "Attributes" = "3:512"
@@ -522,14 +512,9 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Store, Version=1.0.6316.32641, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Store, Version=1.0.6317.36147, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AC28BA2E128D48E9F35EA559AA8F08FF"
-                    {
-                    "Name" = "8:Store.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Store.dll"
             "TargetName" = "8:"
@@ -553,14 +538,9 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D402282C1C13D261D9CBD0F22BA5558E"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -637,7 +617,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Mia"
         "ProductCode" = "8:{842E1E24-B51B-4EB8-A759-5785F78A87A0}"
-        "PackageCode" = "8:{B2977A3A-FC1F-428D-947F-D66CE2C42347}"
+        "PackageCode" = "8:{45D56078-5DEF-4965-86BC-9F5A6C7D44BC}"
         "UpgradeCode" = "8:{F03268BA-F0AF-44A5-8A88-2A6A553D6170}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -997,6 +977,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_36242B894C46409CA610511CCC151F7A"
+            {
+            "Name" = "8:Mia"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_B455572CA2C3445C9A887A5DC9B3A68A"
+            "Folder" = "8:_12CB646797F44ACFA7B4C76C8127AC4D"
+            "WorkingFolder" = "8:_A9CFCBF67F0E49BB98DFE24E9A361CD5"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
