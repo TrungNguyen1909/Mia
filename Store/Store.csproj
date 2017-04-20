@@ -65,7 +65,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" "$(SolutionDir)ConfuserEx\Confuser.CLI.exe" "$(ProjectDir)\$(ProjectName).crproj"</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0384F48469E74A9EA737D16D2D8193E8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0F9D8EEC2D5A458E8C9A36EF7AAFFED5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,12 +34,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7585E94A5471576E61D47BC972603BA7"
-        "OwnerKey" = "8:_0384F48469E74A9EA737D16D2D8193E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7585E94A5471576E61D47BC972603BA7"
         "OwnerKey" = "8:_AC28BA2E128D48E9F35EA559AA8F08FF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -57,38 +45,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_77E903FE4B3E40A6A8E08F38FC03C1F6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9238610F9D6B62EE0C752BD18A8A2D5D"
+        "MsmKey" = "8:_7FCF838BE090A22DA22C467F7E4CA800"
         "OwnerKey" = "8:_B455572CA2C3445C9A887A5DC9B3A68A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_9371C8B7C841BE45F13975CE80DC779A"
-        "OwnerKey" = "8:_0384F48469E74A9EA737D16D2D8193E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9371C8B7C841BE45F13975CE80DC779A"
-        "OwnerKey" = "8:_C05C370F3C8C40B3A9593F7B09996BD8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9371C8B7C841BE45F13975CE80DC779A"
         "OwnerKey" = "8:_B455572CA2C3445C9A887A5DC9B3A68A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9371C8B7C841BE45F13975CE80DC779A"
-        "OwnerKey" = "8:_77E903FE4B3E40A6A8E08F38FC03C1F6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -111,20 +75,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C05C370F3C8C40B3A9593F7B09996BD8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D402282C1C13D261D9CBD0F22BA5558E"
         "OwnerKey" = "8:_7585E94A5471576E61D47BC972603BA7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D402282C1C13D261D9CBD0F22BA5558E"
-        "OwnerKey" = "8:_C05C370F3C8C40B3A9593F7B09996BD8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -141,20 +93,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D402282C1C13D261D9CBD0F22BA5558E"
-        "OwnerKey" = "8:_0384F48469E74A9EA737D16D2D8193E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B455572CA2C3445C9A887A5DC9B3A68A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C05C370F3C8C40B3A9593F7B09996BD8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -172,7 +112,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9238610F9D6B62EE0C752BD18A8A2D5D"
+        "OwnerKey" = "8:_7FCF838BE090A22DA22C467F7E4CA800"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -185,18 +125,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1EEDD6917F45AC435E61D6EEC99ED5F5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_77E903FE4B3E40A6A8E08F38FC03C1F6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0384F48469E74A9EA737D16D2D8193E8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -336,9 +264,14 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SmartHome, Version=1.0.6317.36147, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:SmartHome, Version=1.0.6317.36656, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_1CC9D92DB565A6787D4E5ADA6954ABAF"
+                    {
+                    "Name" = "8:SmartHome.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:SmartHome.dll"
             "TargetName" = "8:"
@@ -393,9 +326,14 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Data, Version=1.0.6317.36146, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Data, Version=1.0.6317.36656, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_7585E94A5471576E61D47BC972603BA7"
+                    {
+                    "Name" = "8:Data.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Data.dll"
             "TargetName" = "8:"
@@ -415,14 +353,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9238610F9D6B62EE0C752BD18A8A2D5D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7FCF838BE090A22DA22C467F7E4CA800"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SpeechClient, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:SpeechClient, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
-                    "_9238610F9D6B62EE0C752BD18A8A2D5D"
+                    "_7FCF838BE090A22DA22C467F7E4CA800"
                     {
                     "Name" = "8:SpeechClient.dll"
                     "Attributes" = "3:512"
@@ -512,9 +450,14 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Store, Version=1.0.6317.36147, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Store, Version=1.0.6317.36656, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_AC28BA2E128D48E9F35EA559AA8F08FF"
+                    {
+                    "Name" = "8:Store.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Store.dll"
             "TargetName" = "8:"
@@ -541,6 +484,11 @@
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_D402282C1C13D261D9CBD0F22BA5558E"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -1390,34 +1338,6 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0384F48469E74A9EA737D16D2D8193E8"
-            {
-            "SourcePath" = "8:..\\Store\\obj\\Release\\Store.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A9CFCBF67F0E49BB98DFE24E9A361CD5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{575AFA37-DC5C-4B03-9BDB-335B35D55765}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_23B29727FA164FB0BA0BD1C55ECFBDF0"
             {
             "SourcePath" = "8:"
@@ -1469,34 +1389,6 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:RuntimeImplementation"
             "OutputProjectGuid" = "8:{575AFA37-DC5C-4B03-9BDB-335B35D55765}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_77E903FE4B3E40A6A8E08F38FC03C1F6"
-            {
-            "SourcePath" = "8:..\\SmartHome\\obj\\Release\\SmartHome.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A9CFCBF67F0E49BB98DFE24E9A361CD5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{9682B81B-E824-4504-B974-AAE9D53CD163}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
@@ -1581,34 +1473,6 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{6CE117FD-F2DF-4C57-8C5C-E526A27C56F6}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C05C370F3C8C40B3A9593F7B09996BD8"
-            {
-            "SourcePath" = "8:..\\Data\\obj\\Release\\Data.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A9CFCBF67F0E49BB98DFE24E9A361CD5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{D84AF32B-5DA0-4E9B-A7E6-28259B1AE16F}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
