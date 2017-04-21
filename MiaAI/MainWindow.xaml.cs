@@ -78,6 +78,7 @@ namespace MiaAI
             }
             var config = new AIConfiguration("6bb0cdf023e54c868895091294ae2a0e", SupportedLanguage.English);
             lus = new ApiAi(config);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
         }
         #endregion
         #region Background Wakeup 
@@ -344,12 +345,17 @@ namespace MiaAI
                                 else
                                     DateTime.TryParseExact(time, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out converted);
                             }
-                            if (converted < DateTime.Now) converted= converted.AddDays(1);
+                            while (converted < DateTime.Now) converted= converted.AddDays(1);
                             summary = summary.Trim();
                             item.reminder = summary;
                             item.datetime = converted;
                             item.Notified = false;
-                            await HistoryWrite("I'll remind you to " + summary + " on " + converted.ToString() + ". Ready to confirm?", speech); 
+                            string cvt;
+                            if (converted.Date > DateTime.Now.Date)
+                                cvt = converted.ToString("dddd, MMMM dd, yyyy h:mm tt");
+                            else cvt = converted.ToShortTimeString();
+                            
+                            await HistoryWrite("I'll remind you to " + summary + " on " + cvt + ". Ready to confirm?", speech); 
                             if (speech)
                                 Dispatcher.Invoke((Action)(() =>
                                 {
