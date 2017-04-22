@@ -15,13 +15,20 @@ namespace Data
         private static string WAK2 = "LKLTPK-98QWG32A5X";
         private static string WAK1 = "U8UY5L-WAAGPAARQU";
         private static string KGK = "AIzaSyACbHtnNF5jshputRfDFH_BfJWPgWSN0n0";
+        private static string LocationParameter()
+        {
+            string loc = Location.GetCurrentLocation();
+            if (loc == "autoip") return null;
+            else loc = "&latlong=" + loc;
+            return loc;
+        }
         public static Dictionary<string,string> GetKnowledge(string s)
         {
             return GetWolframAlphaKnowledge(s);
         }
         public static Dictionary<string,string> GetGoogleKnowledge(string s)
         {
-            string url = "https://kgsearch.googleapis.com/v1/entities:search?query=" + s + "&key="+KGK+"&limit=1&indent=True";
+            string url = "https://kgsearch.googleapis.com/v1/entities:search?query=" + s + "&key="+KGK+"&limit=1&indent=True"+LocationParameter();
             
             HttpWebRequest connection = (HttpWebRequest)WebRequest.Create(url);
             connection.ContentType = "application/json";
@@ -80,7 +87,7 @@ namespace Data
         public static Dictionary<string, string> GetWolframAlphaKnowledge(string q)
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
-            string url = "http://api.wolframalpha.com/v1/spoken?input=" + q + "&appid=" + WAK2;
+            string url = "http://api.wolframalpha.com/v1/spoken?input=" + q + "&appid=" + WAK2+LocationParameter();
             HttpWebRequest connection = (HttpWebRequest)WebRequest.Create(url);
             HttpWebResponse response;
             string responseFromServer=null;
